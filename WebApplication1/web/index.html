@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+	<title>index</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+	<script>
+	    var div = document.createElement("div");
+	    div.setAttribute("id", "div");
+	    document.body.appendChild(div);
+
+	    criarFomulario();
+
+	    function criarFomulario() {
+		var div = document.createElement("div");
+		document.body.replaceChild(div, document.getElementById("div"));
+		document.getElementsByTagName("div")[0].setAttribute("id", "div");
+
+		var h1 = document.createElement("h1");
+		h1.innerHTML = "Cadastro de funcionario da slowNet";
+		document.getElementById("div").appendChild(h1);
+
+		var form = document.createElement("form");
+		form.setAttribute("id", "form");
+		form.setAttribute("method", "get");
+		form.setAttribute("action", "#");
+		document.getElementById("div").appendChild(form);
+
+		document.getElementById("form").appendChild(document.createTextNode("Codigo: "));
+		var codigo = document.createElement("input");
+		codigo.setAttribute("type", "text");
+		codigo.setAttribute("name", "codigo");
+		document.getElementById("form").appendChild(codigo);
+		document.getElementById("form").appendChild(document.createElement("br"));
+
+		document.getElementById("form").appendChild(document.createTextNode("Nome: "));
+		var nome = document.createElement("input");
+		nome.setAttribute("type", "text");
+		nome.setAttribute("name", "nome");
+		document.getElementById("form").appendChild(nome);
+		document.getElementById("form").appendChild(document.createElement("br"));
+
+		document.getElementById("form").appendChild(document.createTextNode("Função: "));
+		var funcao = document.createElement("input");
+		funcao.setAttribute("type", "text");
+		funcao.setAttribute("name", "funcao");
+		document.getElementById("form").appendChild(funcao);
+		document.getElementById("form").appendChild(document.createElement("br"));
+
+		var submit = document.createElement("button");
+		submit.appendChild(document.createTextNode("Cadastrar"));
+		submit.addEventListener("click", function () {
+		    enviarDados();
+		});
+		function enviarDados() {
+		    var xmlHttp = new XMLHttpRequest();
+		    xmlHttp.onreadystatechange = function () {
+			if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+			    document.getElementById("div").innerHTML = xmlHttp.responseText;
+			    var botao = document.createElement("button");
+			    botao.appendChild(document.createTextNode("Voltar"));
+			    botao.addEventListener("click", function () {
+				criarFomulario();
+			    });
+			    document.getElementById("div").appendChild(botao);
+			}
+		    };
+		    var codigo = document.getElementsByName("codigo")[0].value;
+		    var nome = document.getElementsByName("nome")[0].value;
+		    var funcao = document.getElementsByName("funcao")[0].value;
+		    xmlHttp.open('GET', 'CadastroFuncionarioServlet?codigo=' + codigo + '&nome=' + nome + '&funcao=' + funcao, true);
+		    xmlHttp.send();
+		}
+		document.getElementById("div").appendChild(submit);
+
+		var button = document.createElement("button");
+		button.appendChild(document.createTextNode("Mostrar funcionários"));
+		button.addEventListener("click", function () {
+		    mostrarFuncionarios();
+		});
+		function mostrarFuncionarios() {
+		    var xmlHttp = new XMLHttpRequest();
+		    xmlHttp.onreadystatechange = function () {
+			if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+//                            document.getElementById("div").innerHTML = xmlHttp.responseText;
+			    var obj = JSON.parse(xmlHttp.responseText);
+                            document.getElementById("div").appendChild(document.createTextNode(obj.funcionarios[0].codigo));
+                            document.getElementById("div").appendChild(document.createElement("br"));
+			    var botao = document.createElement("button");
+			    botao.appendChild(document.createTextNode("Voltar"));
+			    botao.addEventListener("click", function () {
+				criarFomulario();
+			    });
+			    document.getElementById("div").appendChild(botao);
+			}
+		    };
+		    xmlHttp.open('GET', 'ApresentaFuncionariosServlet', true);
+		    xmlHttp.send();
+		}
+		document.getElementById("div").appendChild(button);
+	    }
+	</script>
+    </body>
+</html>
