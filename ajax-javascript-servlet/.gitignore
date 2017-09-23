@@ -38,4 +38,3 @@ nbdist/
 .nb-gradle/
 
 # End of https://www.gitignore.io/api/java,netbeans,java-web
-/ajax-javascript-servlet/nbproject/private/
