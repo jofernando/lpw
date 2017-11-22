@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $("#cavaloesquerda").draggable({revert: 'invalid',
+                    start: function (event, ui) {
+                        $("#31").droppable({accept: '#cavaloesquerda', activeClass: 'soltura'});
+                        $("#33").droppable({accept: '#cavaloesquerda', activeClass: 'soltura'});
+                    }});
+                $("#cavalodireita").draggable({revert: 'invalid',
+                    start: function (event, ui) {
+                        $("#38").droppable({accept: '#cavalodireita', activeClass: 'soltura'});
+                        $("#36").droppable({accept: '#cavalodireita', activeClass: 'soltura'});
+                    }});
+            });
+        </script>
+        <style>
+            .soltura{
+                background-color: #cccc70
+            }
+            .ui-draggable{
+                background-color: #cccc70
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><div id="11" style="border: solid red;width: 50px;height: 50px"><img id="torreesquerda" src="chess_piece_rook.png" width="50" height="50"/></div></td>
+                <td><div id="12" style="border: solid red;width: 50px;height: 50px"><img id="cavaloesquerda" src="chess_piece_knight.png" width="50" height="50"/></div></td>
+                <td><div id="13" style="border: solid red;width: 50px;height: 50px"><img id="bispoesquerda" src="chess_piece_bishop.png" width="50" height="50"/></div></td>
+                <td><div id="14" style="border: solid red;width: 50px;height: 50px"><img id="rei" src="chess_piece_king.png" width="50" height="50"/></div></td>
+                <td><div id="15" style="border: solid red;width: 50px;height: 50px"><img id="rainha" src="chess_piece_queen.png" width="50" height="50"/></div></td>
+                <td><div id="16" style="border: solid red;width: 50px;height: 50px"><img id="bispodireita" src="chess_piece_bishop.png" width="50" height="50"/></div></td>
+                <td><div id="17" style="border: solid red;width: 50px;height: 50px"><img id="cavalodireita" src="chess_piece_knight.png" width="50" height="50"/></div></td>
+                <td><div id="18" style="border: solid red;width: 50px;height: 50px"><img id="torredireita" src="chess_piece_rook.png" width="50" height="50"/></div></td>
+            </tr>
+            <tr>
+                <td><div id="21" style="border: solid red;width: 50px;height: 50px"><img id="peao1" src="chess_piece_pawn.png" width="50" height="50"/></div></td>
+                <td><div id="22" style="border: solid red;width: 50px;height: 50px"><img id="peao2" src="chess_piece_pawn.png" width="50" height="50"/></div></td>
+                <td><div id="23" style="border: solid red;width: 50px;height: 50px"><img id="peao3" src="chess_piece_pawn.png" width="50" height="50"/></div></td>
+                <td><div id="24" style="border: solid red;width: 50px;height: 50px"><img id="peao4" src="chess_piece_pawn.png" width="50" height="50"/></div></td>
+                <td><div id="25" style="border: solid red;width: 50px;height: 50px"><img id="peao5" src="chess_piece_pawn.png" width="50" height="50"/></div></td>
+                <td><div id="26" style="border: solid red;width: 50px;height: 50px"><img id="peao6" src="chess_piece_pawn.png" width="50" height="50"/></div></td>
+                <td><div id="27" style="border: solid red;width: 50px;height: 50px"><img id="peao7" src="chess_piece_pawn.png" width="50" height="50"/></div></td>
+                <td><div id="28" style="border: solid red;width: 50px;height: 50px"><img id="peao8" src="chess_piece_pawn.png" width="50" height="50"/></div></td>
+            </tr>
+            <tr>
+                <td><div id="31" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="32" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="33" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="34" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="35" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="36" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="37" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="38" style="border: solid red;width: 50px;height: 50px"></div></td>
+            </tr>
+            <tr>
+                <td><div id="41" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="42" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="43" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="44" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="45" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="46" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="47" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="48" style="border: solid red;width: 50px;height: 50px"></div></td>
+            </tr>
+            <tr>
+                <td><div id="51" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="52" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="53" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="54" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="55" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="56" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="57" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="58" style="border: solid red;width: 50px;height: 50px"></div></td>
+            </tr>
+            <tr>
+                <td><div id="61" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="62" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="63" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="64" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="65" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="66" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="67" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="68" style="border: solid red;width: 50px;height: 50px"></div></td>
+            </tr>
+            <tr>
+                <td><div id="71" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="72" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="73" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="74" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="75" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="76" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="77" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="78" style="border: solid red;width: 50px;height: 50px"></div></td>
+            </tr>
+            <tr>
+                <td><div id="81" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="82" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="83" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="84" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="85" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="86" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="87" style="border: solid red;width: 50px;height: 50px"></div></td>
+                <td><div id="88" style="border: solid red;width: 50px;height: 50px"></div></td>
+            </tr>
+        </table>
+    </body>
+</html>

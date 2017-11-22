@@ -39,3 +39,4 @@ nbdist/
 
 # End of https://www.gitignore.io/api/java,netbeans,java-web
 /ajax-javascript-servlet/nbproject/private/
+/javascript-jqueryui/nbproject/private/
